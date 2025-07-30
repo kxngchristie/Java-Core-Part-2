@@ -24,7 +24,7 @@ public class WordExtractorFromSong_p2 {
         System.out.println("--- Cleaned Text: --- \n\"" + finalCleanedText + "\"");
         // Splitting the string by one or more whitespace characters, and also Using .trim() before splitting
         // handles any leading/trailing spaces that might result.
-        String[] wordsArray = lowercasedLyrics.trim().split("\\s+");
+        String[] wordsArray = finalCleanedText.split("\\s+");
 
         List<String> wordList = new ArrayList<>();
         for (String word : wordsArray) {
