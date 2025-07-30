@@ -107,6 +107,7 @@ public class WordExtractorFromSong_p1 {
             String [] words = getWordsFromSongLyrics(beatlesYellowSubmarineLyrics);
 
             System.out.println("\n--- Word Array (" + words.length + " words): --- " + "\n" + Arrays.toString(words));
+
             countAndPrintWordOccurrences(words);
         }
 }
