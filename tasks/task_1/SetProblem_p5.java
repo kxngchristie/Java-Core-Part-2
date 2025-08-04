@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class SetProblem {
+public class SetProblem_p5 {
     static class User {
         private String name;
         private int age;
