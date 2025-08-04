@@ -17,6 +17,12 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class WordExtractorFromSong_p4 {
+    public static class BeatlesException extends Exception {
+        public BeatlesException(String message, Throwable cause) {
+            super("Beatles: " + message, cause);
+        }
+    }
+
     public static void saveLyricsToFile(String lyrics, String filePath) {
         Path path = Paths.get(filePath);
         try {
@@ -31,7 +37,7 @@ public class WordExtractorFromSong_p4 {
         }
     }
 
-    public static String readSongFromFile(String filePath) {
+    public static String readSongFromFile(String filePath) throws BeatlesException {
         Path path = Paths.get(filePath);
         try{
             String content = Files.readString(path, StandardCharsets.UTF_8);
@@ -39,8 +45,7 @@ public class WordExtractorFromSong_p4 {
             System.out.println();
             return content;
         } catch (IOException e) {
-            System.err.println("Error reading song from file: " + e.getMessage());
-            return null;
+            throw new BeatlesException("Failed to read song from file", e);
         }
     }
 
@@ -72,7 +77,7 @@ public class WordExtractorFromSong_p4 {
 
     public static void countAndPrintWordOccurrences(List<String> words) {
         if (words == null || words.isEmpty()) {
-            System.out.println("Error, No words to count.");
+            System.out.println("\nError, No words to count.");
             return;
         }
 
@@ -90,7 +95,7 @@ public class WordExtractorFromSong_p4 {
 
     public static void sortAndPrintWordsByLength(List<String> words) {
         if (words == null || words.isEmpty()) {
-            System.out.println("Error, No words to sort by length.");
+            System.out.println("\nError, No words to sort by length.");
             return;
         }
 
@@ -107,7 +112,7 @@ public class WordExtractorFromSong_p4 {
 
     public static void removeSpecificWordsFromList(List<String> words, String... wordsToRemove) {
         if (words == null || words.isEmpty() || wordsToRemove == null || wordsToRemove.length == 0) {
-            System.out.println("cannot remove words: input list is empty or words to remove not specified.");
+            System.out.println("\ncannot remove words: input list is empty or words to remove not specified.");
             return;
         }
 
@@ -117,6 +122,19 @@ public class WordExtractorFromSong_p4 {
         words.removeIf(wordsToRemoveSet::contains);
         System.out.println("\n--- Words \"yellow\" and \"submarine\" removed. ---");
     }
+
+    public static void CheckSpecificString(String lyrics, String specificString) throws BeatlesException {
+        if (lyrics == null || lyrics.isEmpty()) {
+            throw new BeatlesException("Lyrics are empty or null, cannot check for a specific string.", null);
+        }
+        String lowercasedLyrics = lyrics.toLowerCase();
+        if (lowercasedLyrics.contains(specificString.toLowerCase())) {
+            System.out.println("\nSUCCESS: The specific string \"" + specificString + "\" is present in the lyrics.");
+        } else {
+            throw new BeatlesException("The specific string \"" + specificString + "\" was not found in the song text.", null);
+        }
+    }
+
 
     public static void main(String[] args) {
         String beatlesYellowSubmarineLyrics = """
@@ -173,14 +191,19 @@ public class WordExtractorFromSong_p4 {
 
         System.out.println("\n--- Starting Word Processing from File ---");
 
-        String songContent = readSongFromFile(fileName);
-        if (songContent == null) {
-            System.err.println("Could not read song lyrics from file. Aborting word processing.");
+        String songContent;
+        try {
+            songContent = readSongFromFile(fileName);
+        } catch (BeatlesException e) {
+            System.err.println("A Custom BeatlesException was caught:");
+            System.err.println("Message: " + e.getMessage());
+            System.err.println("Caused by: " + e.getCause());
+            e.printStackTrace();
             return;
         }
 
-        System.out.println("--- Original Lyrics of the Song: ---\n" + beatlesYellowSubmarineLyrics);
-        List<String> words = getWordsFromSongLyrics(beatlesYellowSubmarineLyrics);
+        System.out.println("--- Original Lyrics of the Song (Read from file): ---\n" + songContent);
+        List<String> words = getWordsFromSongLyrics(songContent);
 
         System.out.println("\n--- Word List (BEFORE Removal (" + words.size() + " words): --- " + "\n" + words);
 
@@ -194,5 +217,21 @@ public class WordExtractorFromSong_p4 {
         countAndPrintWordOccurrences(words);
 
         sortAndPrintWordsByLength(words);
+
+        // Case 1: The specific string is present
+        try {
+            CheckSpecificString(songContent, "In the town where I was born");
+        } catch (BeatlesException e) {
+            System.err.println("\n--- Caught UNEXPECTED BeatlesException ---");
+            e.printStackTrace();
+        }
+
+        // Case 2: The specific string is not present
+        try {
+            CheckSpecificString(songContent, "Show must go on!");
+        } catch (BeatlesException e) {
+            System.err.println("\n--- Caught EXPECTED BeatlesException ---");
+            e.printStackTrace();
+        }
     }
 }
