@@ -14,7 +14,7 @@ public class RegexSubStringExtractor_p2 {
         Matcher matcher = pattern.matcher(inputString);
 
         if (matcher.find()) {
-            // matcher.group(0) is the entire matched string (e.g., "orderUUID=d34149d8...")
+            // matcher.group(0) is the entire matched string.
             // return matcher.group(0);
             // matcher.group(1) is the content of the first capturing group, which is the UUID value.
             return matcher.group(1);
