@@ -1,4 +1,4 @@
-# Java Core - Part 2 📚 
+# Java-Core-Part-2 📚 
 
 This repository contains home tasks and exercises for Java Core Part 2, focusing on Collections Framework, String manipulation, and Regular Expressions. 🎯
 
