@@ -89,5 +89,9 @@ Tasks:
 2. 📂 Navigate to the specific package you want to explore
 3. ▶️ Compile and run the Java files to see the demonstrations
 
-## Note 📌
-This project is part of the Quality Assurance Engineer Learning Path, focusing on Java Core concepts and their practical applications in testing scenarios. 🎓
+## Requirements ⚙️
+
+- ☕ Java JDK 8 or higher
+- 💻 Any Java IDE (IntelliJ IDEA, Eclipse, VS Code, etc.)
+
+Happy Coding! 💻
