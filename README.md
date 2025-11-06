@@ -1,6 +1,6 @@
 # Java-Core-Part-2 📚 
 
-This repository contains home tasks and exercises for Java Core Part 2, focusing on Collections Framework, String manipulation, and Regular Expressions. 🎯
+This repository contains home tasks and exercises for Java Core Part 2, focusing on the Collections Framework, String manipulation, and Regular Expressions. 🎯
 
 ## Project Structure 📂
 
@@ -39,7 +39,7 @@ Files:
 Tasks:
 - 🎵 Word extraction from song lyrics with different implementations
 - 👥 Set operations and user management
-- 🎸 Includes processing of Beatles' Yellow Submarine lyrics
+- 🎸 Includes processing of the Beatles' Yellow Submarine lyrics
 
 ---
 
@@ -84,14 +84,14 @@ Tasks:
    - 🔎 Pattern matching and extraction
    - 🎨 Complex string processing
 
+## Requirements ⚙️
+
+- ☕ Java JDK 8 or higher
+- 💻 Any Java IDE (IntelliJ IDEA recommended)
+  
 ## Getting Started 🚀
 1. 📥 Clone the repository
 2. 📂 Navigate to the specific package you want to explore
 3. ▶️ Compile and run the Java files to see the demonstrations
-
-## Requirements ⚙️
-
-- ☕ Java JDK 8 or higher
-- 💻 Any Java IDE (IntelliJ IDEA, Eclipse, VS Code, etc.)
 
 Happy Coding! 💻
