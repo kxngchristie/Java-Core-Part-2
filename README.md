@@ -5,6 +5,7 @@ This repository contains home tasks and exercises for Java Core Part 2, focusing
 ## Project Structure 📂
 
 ```
+Java-Core-Part-2/
 └── tasks/                                            # Main Tasks Directory
     ├── output/                                       # Output Resources
     │   └── lyrics/
