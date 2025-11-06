@@ -28,7 +28,7 @@ Java-Core-Part-2/
 └── README.md
 ```
 
-### Home Tasks 📝
+## Home Tasks 📝
 
 #### Home Task 1: Word Processing and Sets (`tasks/task_1/`) 
 Files:
@@ -41,7 +41,7 @@ Tasks:
 - 👥 Set operations and user management
 - 🎸 Includes processing of Beatles' Yellow Submarine lyrics
 
---
+---
 
 #### Home Task 2: Regular Expressions and String Operations (`tasks/task_2/`)
 Files:
@@ -58,7 +58,7 @@ Tasks:
 - 🔍 String pattern matching (case-sensitive and case-insensitive)
 - ✂️ Substring operations with regex
 
---
+---
 
 #### Home Task 3: Advanced String Processing (`tasks/task_3/`)
 Files:
