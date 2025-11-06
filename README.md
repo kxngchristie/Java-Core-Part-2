@@ -5,27 +5,28 @@ This repository contains home tasks and exercises for Java Core Part 2, focusing
 ## Project Structure 📂
 
 ```
-Java-Core-Part-2/
-├── tasks/
-│   ├── output/
-│   │   └── lyrics/
-│   │       └── beatles_yellow_submarine_lyrics.txt
-│   ├── task_1/
-│   │   ├── WordExtractorFromSong_p1.java
-│   │   ├── WordExtractorFromSong_p2.java
-│   │   ├── WordExtractorFromSong_p3.java
-│   │   ├── WordExtractorFromSong_p4.java
-│   │   └── SetProblem_p5.java
-│   ├── task_2/
-│   │   ├── RegexEmailExtractor_p3.java
-│   │   ├── RegexNumOrdersExtractor_p4.java
-│   │   ├── RegexSubStringCheckerTF_p1.java
-│   │   ├── RegexSubStringExtractor_p2.java
-│   │   ├── StringContainsTFCaseInsensitive_p1.java
-│   │   └── StringContainsTFCaseSensitive_p1.java
-│   └── task_3/
-│       └── WordsBeginningWithDe.java
-└── README.md
+└── tasks/                                            # Main Tasks Directory
+    ├── output/                                       # Output Resources
+    │   └── lyrics/
+    │       └── beatles_yellow_submarine_lyrics.txt   # 🎵 Song Lyrics Input File
+    │
+    ├── task_1/                                       # 📊 Collections & Word Processing
+    │   ├── WordExtractorFromSong_p1.java             # 📝 Basic Word Extraction
+    │   ├── WordExtractorFromSong_p2.java             # 📝 Enhanced Word Extraction
+    │   ├── WordExtractorFromSong_p3.java             # 📝 Advanced Word Extraction
+    │   ├── WordExtractorFromSong_p4.java             # 📝 Exception Handling Version
+    │   └── SetProblem_p5.java                        # 🔄 Set Operations Implementation
+    │
+    ├── task_2/                                       # 🔍 Regex & String Operations
+    │   ├── RegexEmailExtractor_p3.java               # 📧 Email Pattern Matching
+    │   ├── RegexNumOrdersExtractor_p4.java           # 🔢 Number Pattern Extraction
+    │   ├── RegexSubStringCheckerTF_p1.java           # ✅ Regex Pattern Validation
+    │   ├── RegexSubStringExtractor_p2.java           # ✂️ Substring Pattern Matching
+    │   ├── StringContainsTFCaseInsensitive_p1.java   # 🔠 Case-Insensitive Search
+    │   └── StringContainsTFCaseSensitive_p1.java     # 🔡 Case-Sensitive Search
+    │
+    └── task_3/                                       # 🎯 Advanced String Processing
+        └── WordsBeginningWithDe.java                 # 🔤 'De-' Words Pattern Matching
 ```
 
 ## Home Tasks 📝
